@@ -1,0 +1,53 @@
+---17/07/2022 - Aula 01:
+	- Live apresentando o projeto a ser desenvolvido, no caso um app de lista de ajuda e tarefas.
+
+---19/07/2022 - Aula 02
+01 - CRIANDO PROJETO COM EXPO:
+	- Navegue com o terminal até a pasta que deseja criar o projeto e digite " expo init rockethelp "
+	- Nesse momento teremos duas opções para criar o projeto:
+		- Manager Workflow, o expo que gerencia as configurações do código nativo para nós, sendo assim não temos acesso as pastas Android e IOS num primeiro momento.
+		- Bare Workflow, aqui temos todas a configurações nativas acima e mais o acesso as pastas Android e IOS logo de início.
+	- Com as setas do teclado navegue até a opção " ... minimal " do modo Bare Workflow e tecle ENTER.
+	- Obs.: vai demorar algum tempo até ser instaladas as configurações
+	- Pode ignorar a pergunta sobre qual modo quer abrir o projeto "Android" ou "IOS".
+	- Abrir o projeto no VSCODE
+
+02 - PASSANDO PROJETO PARA typescript: 
+	- etapa 01: alterar de: App.js - para: App.tsx
+	- etapa 02: criar na raiz o arquvio " tsconfig.json " e deixar ele vazio mesmo
+	- etapa 03: iniciar o projeto com EXPO que ele vai identificar esse tsconfig.json e vai perguntar se queremos usar o projeto
+		typescript, ao respondermos o SIM, o próprio expo vai instalar e configurar o typescript no projeto.
+
+03 - INICIANDO PROJETO COM EXPO:
+	- No terminal digite o comando: " expo start ".
+	- Nesse momento responda com "Y" ou "N" sobre usar o typescript.
+	- Obs.: apos terminada essa instalação, vc pode optar por ver as configurações (QRCode, etc) do expo direto no terminal,
+		ha um toggle "shift+d" que habilita/desabilita essa opção.
+		- Vai deixar exibição no terminal mesmo.
+	
+04 - FORMAS DE RODAR O PROJETO (COm base nas configurações falado acima):
+	- Obs.: explicando as opções que aparecem junto do QRCode após iniciar o projeto.
+	- 1, No Emulador: pressione a tecla " a ", se não existir o app " Expo Go ", será instalado no emulador.
+	- 2, No dispositivo físico (mais vantagem), vá na googelPlay e instale o app " Expo Go ",
+		- depois de instalado, abra o app e leia o QRCode gerado ao iniciar o projeto, para acompanhar o desenvolvimento.
+		- Obs.: tanto a maquina do projeto quanto o dispositivo físico precisam estar na mesma rede de internet.
+
+05 - Criar a pasta "src" e " screens " dentro de screens.
+	- src, contem todos os arquivos criados por nós
+	- screens, contem arquivos das páginas do App
+
+06 - SOBRE A FORMA de styles:
+	- utilizaremos uma biblioteca chamada " Native Base ", ja conta com vários components incriveis
+	- para instalar acesse o site " nativebase.io " e siga as instruções para instalar em um projeto existente criado com Expo:
+		- PARAR o projeto e no terminal rodar as comandos:
+			- 1, " yarn add native-base "
+			- 2, " expo install react-native-svg "
+			- 3, " expo install react-native-safe-area-context "
+			- 4, para usar o nativebase, precisamos envolver nossa aplicação com um contexto NativeBaseProvider:
+				- importar no App.tsx o nativebase
+	- baixamos as pastas "assets" e "styles" contendo as imagens e styles que usaremos no projeto
+	- os styles foram baseados no nativebase e alterados conforme necessidade.
+	- para usar o objeto "THEME" criado no arquivos styles, faça o seguinte:
+		- importar o THEME na página que vai usar, nesse caso no App.tsx
+		- passe o parâmetro theme={THEME} para o NativeBaseProvider
+	- rode novamente o projeto com " expo start "
